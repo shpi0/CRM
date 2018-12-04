@@ -16,7 +16,6 @@ var clearNotifications = function clearClientSmsNotifications(id) {
 
 function markAsReadMenu(clientId) {
     if ($('.notify').length) {
-
         var url = "/user/notification/comment/clear/" + clientId;
         $.ajax({
             type: "POST",

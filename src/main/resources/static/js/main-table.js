@@ -1015,7 +1015,6 @@ $(function () {
     });
 });
 
-
 function hideClient(clientId) {
     let url = 'rest/client/postpone';
     let flag = document.querySelector(".isPostponeFlag").checked;
@@ -1071,7 +1070,6 @@ $(document).ready(function () {
     });
 });
 
-
 $(function () {
     $('.portlet-body').on('click', function (e) {
         if (e.target.className.startsWith("portlet-body") === true) {
@@ -1079,11 +1077,12 @@ $(function () {
             var currentModal = $('#main-modal-window');
             currentModal.data('clientId', clientId);
             currentModal.modal('show');
-            markAsReadMenu($(e.target).attr('client-id'))
+            if($(this).find('span.notification').length) {
+                markAsReadMenu($(e.target).attr('client-id'));
+            }
         }
     });
 });
-
 
 $(function () {
     $('.portlet-header').on('click', function (e) {
@@ -1162,7 +1161,6 @@ function assignSkype(id) {
                     }
 
                 });
-
 
                 currentBtn.attr("disabled", "true");
                 currentBtn.after(
