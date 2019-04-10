@@ -53,6 +53,9 @@ public class User implements UserDetails {
 	@Column(name = "vk")
 	private String vk;
 
+	@Column(name = "some_data")
+	private String someData;
+
 	@Column(name = "sex", nullable = false) // gender (пол или мужской/женский род) правильнее. sex - это ибатсо
 	private String sex;
 
@@ -185,6 +188,14 @@ public class User implements UserDetails {
 		this.ipTelephony = ipTelephony;
 		this.isVerified = isVerified;
 		this.isEnabled = isVerified;
+	}
+
+	public String getSomeData() {
+		return someData;
+	}
+
+	public void setSomeData(String someData) {
+		this.someData = someData;
 	}
 
 	public void setVerified(boolean verified) {
